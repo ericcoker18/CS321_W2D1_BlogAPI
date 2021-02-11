@@ -62,8 +62,9 @@ namespace CS321_W2D1_BlogAPI.Controllers
         public IActionResult Put(int id, [FromBody] Post updatedPost)
         {
             Post post;
-            // TODO: use _postService to update post. store returned Post in the post variable.
+            // TODO: use post service to find the post with id. store return Post in post variable.
             if (post == null) return NotFound();
+            // TODO: use _postService to update post. store returned Post in the post variable.
             return Ok(post);
         }
 
@@ -74,7 +75,7 @@ namespace CS321_W2D1_BlogAPI.Controllers
         {
             // TODO: use _postService to get post by id
             if (post == null) return NotFound();
-            // TODO: use _postService to update post
+            // TODO: use _postService to delete post
             return NoContent();
         }
     }
