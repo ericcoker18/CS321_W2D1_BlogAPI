@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using CS321_W2D1_BlogAPI.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,10 +17,11 @@ namespace CS321_W2D1_BlogAPI
         private IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection  services)
         {
             services.AddMvc();
             // TODO: configure PostService so it will be injected into controller
+            services.AddSingleton<PostService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
